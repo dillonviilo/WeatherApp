@@ -1,0 +1,9 @@
+.location{
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.location h4{
+    padding: 1em;
+}

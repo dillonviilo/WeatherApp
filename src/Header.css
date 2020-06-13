@@ -1,0 +1,14 @@
+.header {
+    background-color: #0065a4;
+    color: #ffffff;
+    display: flex;
+}
+
+.header h1{
+    padding:.5em;
+}
+
+.header h3{
+    padding: 2em;
+    font-size: small;
+}
