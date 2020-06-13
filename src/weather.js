@@ -1,14 +1,40 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 
+class Location extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {  
+            lat:null,
+            lon:null,
+            error:null,
+            isLoaded:false,
+        };
+    }
+
+    componentDidMount = () => {
+        navigator.geolocation.getCurrentPosition(this.setPosition);
+    }
+
+    setPosition = (location) => {
+        this.setState({
+            isLoaded: true,
+            lat: location.coords.latitude,
+            lon: location.coords.longitude
+        });
+    }
+
+    getUrl(){
+        return "https://api.weather.gov/points/" + this.lat + "," + this.lon;
+    }
+}
+
 class Weather extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: false,
         isLoaded: false,
-        lng: null,
-        lat:  null,
         day1: [],
         day2: [],
         day3: [],
@@ -28,17 +54,11 @@ class Weather extends React.Component {
 
 
     async componentDidMount() {
-      const location = navigator.geolocation.getCurrentPosition(function (position) {
-          const x = position.coords.latitude;
-          const y = position.coords.longitude;
-          const z = [x, y];
-          console.log(z);
-          return z;
-      });
-      //const url = "https://api.weather.gov/points/39.7456,-97.0892";
-      
-      console.log(location);
-      const url = "https://api.weather.gov/points/" + location + "," + location;
+      var location = new Location();
+      var x = location.getUrl();
+      console.log(x)
+      const url = "https://api.weather.gov/points/39.7456,-97.0892";
+      //const url = "https://api.weather.gov/points/" + location.state.lat + "," + location.state.lon;
       console.log(url);
       const response = await fetch(url);
       const data = await response.json();
