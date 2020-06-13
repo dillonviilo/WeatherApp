@@ -5,8 +5,8 @@ class Location extends React.Component{
     constructor(props){
         super(props);
         this.state = {  
-            lat:null,
-            lon:null,
+            lat:0,
+            lon:0,
             error:null,
             isLoaded:false,
         };
@@ -25,7 +25,7 @@ class Location extends React.Component{
     }
 
     getUrl(){
-        return "https://api.weather.gov/points/" + this.lat + "," + this.lon;
+        return "https://api.weather.gov/points/" + this.state.lat + "," + this.state.lon;
     }
 }
 
