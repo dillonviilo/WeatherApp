@@ -1,5 +1,6 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
+import Forecast from './forecast';
 
 export class Location extends React.Component{
     constructor(props){
@@ -21,6 +22,7 @@ export class Location extends React.Component{
                                 lat: location.coords.latitude,
                                 lon: location.coords.longitude
                             });
+			    ReactDOM.render(<Forecast lat={this.state.lat} lon={this.state.lon} />, document.getElementById("forecast"));
     }
 
     render = () => {

@@ -1,38 +1,13 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
-class Location extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {  
-            lat:0,
-            lon:0,
-            error:null,
-            isLoaded:false,
-        };
-    }
 
-    componentDidMount = () => {
-        navigator.geolocation.getCurrentPosition(this.setPosition);
-    }
-
-    setPosition = (location) => {
-        this.setState({
-            isLoaded: true,
-            lat: location.coords.latitude,
-            lon: location.coords.longitude
-        });
-    }
-
-    getUrl(){
-        return "https://api.weather.gov/points/" + this.state.lat + "," + this.state.lon;
-    }
-}
-
-class Weather extends React.Component {
+export class Weather extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        lat: props.lat,
+        lon: props.lon,
         error: false,
         isLoaded: false,
         day1: [],
@@ -55,8 +30,8 @@ class Weather extends React.Component {
 
     async componentDidMount() {
       var location = new Location();
-      var x = location.getUrl();
-      console.log(x)
+      location.find();
+      //const url = location.getUrl();
       const url = "https://api.weather.gov/points/39.7456,-97.0892";
       //const url = "https://api.weather.gov/points/" + location.state.lat + "," + location.state.lon;
       console.log(url);

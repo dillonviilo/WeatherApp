@@ -6,16 +6,19 @@ import './location.css';
 import './weather.css';
 import Header from './Header';
 import Location from './location';
-import Weather from './weather';
+//import Weather from './weather';
+import Forecast from './forecast';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Location />
-    <Weather />
+    <Forecast />
   </React.StrictMode>,
-  document.getElementById('header')
+  document.getElementById('header'),
+  document.getElementById('location'),
+  document.getElementById('forecast')
 );
 
 // If you want your app to work offline and load faster, you can change
