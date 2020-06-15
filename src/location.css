@@ -1,3 +1,13 @@
+/*
+Location Style Sheet
+Author: Dillon Viilo
+Date: 06/14/2020
+
+A simple style sheet that turns the background
+black and the text white. Index HTML causes it to shrink
+with the screen if necessary.
+*/
+
 .location{
     background-color: black;
     color: white;

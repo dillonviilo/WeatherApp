@@ -1,15 +1,30 @@
+/*
+Weather Style Sheet
+Author: Dillon Viilo
+Date: 6/14/2020
+
+Contains all the style for forecast (formerly Weather).
+The style is meant to be flexible with screen size using
+bootstrap and react to makei it look nicer.
+*/
+
+/* Container contains all the information, 
+the padding and margins are buit to automatically adjust */
 .container{
     width : 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5%;
+    padding-left: 5%;
     margin-right: auto;
     margin-left: auto;
 }
 
+/* all divs will be in block format*/
 div{
     display:block;
 }
 
+/* Nucl holds the information, arranges it in a
+column and provides a border. */
 .nucl{
     position: relative;
     display: flex;
@@ -20,6 +35,7 @@ div{
     border: 1px solid rgb(0,0,0);
 }
 
+/* Adjusts the information further*/
 .cell{
     flex:33%;
     max-width:33%;
@@ -27,17 +43,19 @@ div{
     width: 100%;
     padding: 15px;
 }
-
+/* Shapes the boxes*/
 *, ::after, ::before{
     box-sizing: border-box;
 }
 
+/* Fixes all the h3 to be the same size*/
 h3{
     text-align: center;
     height: 2em;
     font-size: 2.5vh;
 }
 
+/* Standardizes all images, keeps them center and square*/
 img{
     display: block;
     width: 50%;
@@ -47,6 +65,7 @@ img{
     margin-bottom: 10px;
 }
 
+/* Makes the title flashier and adjust according to screen size*/
 .title{
     background-color: teal;
     border: 1px solid black;
@@ -56,6 +75,7 @@ img{
     justify-content: center;
 }
 
+/* Fixes the font to shrink with the screen and stay in the box*/
 .title h2{
     margin: 0;
     font-family: fantasy;

@@ -1,3 +1,13 @@
+//--------------------------------------
+// Weather Javascript (DEPRECATED)
+// Author: Dillon Viilo
+// Date: 06/14/2020
+//
+// Reference for what was used to make
+// forecast. Weather required a rebuild
+// because of asyncronicity.
+//--------------------------------------
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 

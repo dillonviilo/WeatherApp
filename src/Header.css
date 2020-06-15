@@ -1,3 +1,14 @@
+/*
+Header CSS
+Author: Dillon Viilo
+Date: 6/14/2020
+
+Style sheet for the header at the top of the webpage.
+.header turns the background into the GVSU blue with 
+white font color.
+The rest changes the font into the proper size with
+proper padding.
+*/
 .header {
     background-color: #0065a4;
     color: #ffffff;
